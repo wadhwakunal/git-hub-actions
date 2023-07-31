@@ -2,6 +2,9 @@ name: CI/CD pipeline for automated deployment of DAGs into Composer
 on: push
 jobs:
     deployment:
+        permissions:
+            contents: read
+            id-token: write
         runs-on: ubuntu-latest
         steps:
             - name: Get code from repository
