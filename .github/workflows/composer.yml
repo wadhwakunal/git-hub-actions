@@ -10,7 +10,7 @@ jobs:
             - name: Get code from repository
               uses: actions/checkout@v3
             
-            - name: Authorize Google Cloud Platform
+            - id: auth
               uses: google-github-actions/auth@v1
               with:
                 workload_identity_provider: "projects/131949951730/locations/global/workloadIdentityPools/github-actions-gcs/providers/my_provider"
