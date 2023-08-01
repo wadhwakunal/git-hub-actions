@@ -10,7 +10,8 @@ jobs:
             - name: Get code from repository
               uses: actions/checkout@v3
             
-            - id: auth
+            - name: Authenticate Google Cloud Platform
+              id: auth
               uses: google-github-actions/auth@v1
               with:
                 workload_identity_provider: projects/131949951730/locations/global/workloadIdentityPools/github-actions-gcs/providers/my-provider
@@ -19,6 +20,6 @@ jobs:
             - name: Upload DAGs to Composer
               uses: google-github-actions/upload-cloud-storage@v1
               with:
-                  path: 'a/'
-                  destination: 'kunal-bucket/code'
+                  path: dags/
+                  destination: kunal-bucket
               
