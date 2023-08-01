@@ -13,7 +13,7 @@ jobs:
             - name: Authorize Google Cloud Platform
               uses: google-github-actions/auth@v1
               with:
-                workload_identity_provider: //iam.googleapis.com/projects/131949951730/locations/global/workloadIdentityPools/github-actions-gcs/providers/my_provider
+                workload_identity_provider: "projects/131949951730/locations/global/workloadIdentityPools/github-actions-gcs/providers/my_provider"
                 service_account: gcs-service-account@burner-kunwadhw2.iam.gserviceaccount.com
             
             - name: Upload DAGs to Composer
