@@ -24,7 +24,7 @@ PYSPARK_JOB = {
                     "jar_file_uris": [f"gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar"]},
 }
 
-dag = DAG('demo_pipeline', description='Pipeline to read csv file from GCS and insert data ino BigQuery using Dataproc', schedule_interval=None, start_date=datetime(2023, 7, 13), catchup=False)
+dag = DAG('demo_pipeline', description='Pipeline to read csv file from GCS and insert data into BigQuery using Dataproc', schedule_interval=None, start_date=datetime(2023, 7, 13), catchup=False)
 
 create_table = BigQueryCreateEmptyTableOperator(
     task_id="create_table",
